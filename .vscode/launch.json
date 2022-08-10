@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "students_app",
+            "cwd": "students_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "students_app (profile mode)",
+            "cwd": "students_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "students_app (release mode)",
+            "cwd": "students_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "stuff_app",
+            "cwd": "stuff_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "stuff_app (profile mode)",
+            "cwd": "stuff_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "stuff_app (release mode)",
+            "cwd": "stuff_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

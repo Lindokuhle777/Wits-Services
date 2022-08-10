@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'splash.dart';
 import 'home.dart';
 
 void main() {
@@ -9,7 +10,7 @@ void main() {
 class StudentsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: Splash(),
     );
   }
 }
