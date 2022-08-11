@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stuff_app/Pages/CampusControl/Skeleton.dart';
-
 import 'Vehicle.dart';
 
 class CampusControl extends StatefulWidget {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'Vehicle.dart';
-
 class Skeleton extends StatefulWidget {
   String name;
   String btnAction;
@@ -31,7 +29,7 @@ class _SkeletonState extends State<Skeleton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff115571),
+      backgroundColor: const Color(0xff115571),
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Row(

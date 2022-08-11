@@ -10,19 +10,6 @@ class OnDuty extends StatefulWidget {
 }
 
 class _OnDutyState extends State<OnDuty> {
-  @override
-  Widget build(BuildContext context) {
-    return Skeleton(name: "Next Stuff", btnAction: "Start", itemsList: const ItemList());
-  }
-}
-class ItemList extends StatefulWidget {
-  const ItemList({Key? key}) : super(key: key);
-
-  @override
-  State<ItemList> createState() => _ItemListState();
-}
-
-class _ItemListState extends State<ItemList> {
 
   List<Student> vehicles = [
     Student(name: "Lindokuhle", res: "Student Digz"),
@@ -39,8 +26,7 @@ class _ItemListState extends State<ItemList> {
     Navigator.pushReplacementNamed(context, "/onDuty");
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget myList(){
     return Container(
         padding:
         const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0),
@@ -76,5 +62,10 @@ class _ItemListState extends State<ItemList> {
                 ),
               ),
             )));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Skeleton(name: "Next Stuff", btnAction: "Start", itemsList: myList());
   }
 }
