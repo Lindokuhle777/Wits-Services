@@ -3,6 +3,7 @@ import 'splash.dart';
 import 'home.dart';
 
 void main() {
+
   runApp(StudentsApp());
 }
 
