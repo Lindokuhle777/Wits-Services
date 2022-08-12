@@ -9,13 +9,16 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(StudentsApp());
+  runApp(const StudentsApp());
 }
 
 // The entry point of the app...
 class StudentsApp extends StatelessWidget {
+  const StudentsApp({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Splash(),
     );
   }
