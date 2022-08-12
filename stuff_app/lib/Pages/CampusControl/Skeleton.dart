@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:stuff_app/AuthServices.dart';
 
 class Skeleton extends StatefulWidget {
   String name;
@@ -65,7 +66,8 @@ class _SkeletonState extends State<Skeleton> {
                     PopupMenuItem(
                       child: ListTile(
                         onTap: () {
-                          Navigator.pushReplacementNamed(context, "/CampusControl");
+                          AuthServices().signOut();
+                          Navigator.pushReplacementNamed(context, "/Home");
                         },
                         title: Text('Logout'),
                       ),

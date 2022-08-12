@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:stuff_app/AuthServices.dart';
 import 'package:stuff_app/Pages/Department.dart';
 
 class Home extends StatefulWidget {
@@ -10,27 +13,66 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool isSignedIn = true;
+  String Letter = "";
+  User? user = FirebaseAuth.instance.currentUser;
+  // temp();
 
-  void handleSignIn() {
+  void temp(){
+
+    User? user = FirebaseAuth.instance.currentUser;
+    if(user != null){
+      String? k = user.displayName;
+      Letter = k![0];
+
+
+    }else{
+      isSignedIn = false;
+    }
+
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    temp();
+  }
+
+
+
+
+
+  void handleSignIn() async {
+    await AuthServices().signIn();
+    user = FirebaseAuth.instance.currentUser;
+    if(user != null){
+      String? k = user?.displayName;
+      Letter = k![0];
+    }
     setState(() {
       isSignedIn = !isSignedIn;
     });
   }
-  void handleCard(int index){
+
+  void handleCard(int index) {
     String departmentName = departments[index].name;
 
-    switch(departmentName){
-      case "Campus Control":{
-        Navigator.pushReplacementNamed(context,"/CampusControl");
-      }
-      break;
-      case "Bus Services":{
-        print("Coming soon");
-        // TODO implement Bus Services
-      }
-      break;
-      default:{return;}
-
+    switch (departmentName) {
+      case "Campus Control":
+        {
+          Navigator.pushReplacementNamed(context, "/CampusControl");
+        }
+        break;
+      case "Bus Services":
+        {
+          print("Coming soon");
+          // TODO implement Bus Services
+        }
+        break;
+      default:
+        {
+          return;
+        }
     }
   }
 
@@ -60,9 +102,9 @@ class _HomeState extends State<Home> {
                         "Sign in",
                         style: TextStyle(color: Colors.black),
                       ))
-                  : const CircleAvatar(
-                      child: const Text("L"),
-                    ),
+                  : CircleAvatar(
+                child: Text(Letter),
+              ),
             )
           ],
           backgroundColor: Colors.white,
@@ -84,7 +126,8 @@ class _HomeState extends State<Home> {
             Expanded(
               flex: 4,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0),
                 child: GridView.count(
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.0,
@@ -94,7 +137,9 @@ class _HomeState extends State<Home> {
                     (index) => SizedBox(
                       height: 100.0,
                       child: InkWell(
-                        onTap: (){handleCard(index);},
+                        onTap: () {
+                          handleCard(index);
+                        },
                         child: Card(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +175,9 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            SizedBox(height: 5.0,)
+            SizedBox(
+              height: 5.0,
+            )
           ],
         ));
   }
