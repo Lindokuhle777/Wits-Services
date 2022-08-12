@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:students_app/Firebase/auth_service.dart';
 
 class Buses extends StatefulWidget {
+  const Buses({Key? key}) : super(key: key);
+
   @override
   State<Buses> createState() => _Buses();
 }
 
 class _Buses extends State<Buses> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wits Services'),
+        title: const Text('Wits Services'),
         actions: [_profile()],
       ),
-      body: Text('Buses'),
+      body: const Text('Buses'),
     );
   }
 
   Widget _profile() {
-    return Container(
-        decoration: BoxDecoration(
-            color: Colors.amber, borderRadius: BorderRadius.circular(50)),
-        padding: EdgeInsets.all(12.0),
-        margin: EdgeInsets.all(7.0),
-        child: Row(
-          children: [Text("A")],
-        ));
+    return AuthService().handleAuthState();
   }
 }

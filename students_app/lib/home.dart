@@ -5,6 +5,8 @@ import 'Protection/protection.dart';
 import 'Menu/menu.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   State<Home> createState() => _Home();
 }
@@ -14,7 +16,7 @@ class _Home extends State<Home> {
   int _index = 0;
 
   // list of screen to show...
-  List<Widget> _screens = <Widget>[Buses(), Dining(), Protection(), Menu()];
+  final List<Widget> _screens = <Widget>[Buses(), Dining(), Protection(), Menu()];
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class _Home extends State<Home> {
           selectedItemColor: const Color(0xff115571),
           onTap: _onNavigate,
           currentIndex: _index,
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.bus_alert), label: 'Buses'),
             BottomNavigationBarItem(
@@ -40,7 +42,7 @@ class _Home extends State<Home> {
   // method to change the bottom nav index...
   void _onNavigate(int index) {
     setState(() {
-      this._index = index;
+      _index = index;
     });
   }
 }
