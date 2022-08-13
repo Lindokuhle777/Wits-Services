@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:stuff_app/AuthServices.dart';
 
 class Skeleton extends StatefulWidget {
   String name;
@@ -46,11 +48,11 @@ class _SkeletonState extends State<Skeleton> {
           PopupMenuButton(
               child: Container(
                 margin: const EdgeInsets.all(5.0),
-                child: const CircleAvatar(
+                child: CircleAvatar(
                     backgroundColor: Color(0xff31AFB4),
                     child: Text(
-                      "L",
-                      style: TextStyle(fontSize: 20.0, color: Colors.white),
+                      FirebaseAuth.instance.currentUser!.displayName![0],
+                      style: const TextStyle(fontSize: 20.0, color: Colors.white),
                     )),
               ),
               itemBuilder: (BuildContext context) => <PopupMenuEntry>[
@@ -65,7 +67,8 @@ class _SkeletonState extends State<Skeleton> {
                     PopupMenuItem(
                       child: ListTile(
                         onTap: () {
-                          Navigator.pushReplacementNamed(context, "/CampusControl");
+                          AuthServices().signOut();
+                          Navigator.pushReplacementNamed(context, "/Home");
                         },
                         title: Text('Logout'),
                       ),
