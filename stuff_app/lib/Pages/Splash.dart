@@ -14,13 +14,6 @@ class _SplashState extends State<Splash> {
   func()  {
     AuthServices().CheckUser(context);
 
-    // if (currUser == null) {
-    //   print("We are here");
-    //   Navigator.pushReplacementNamed(context, "/Home");
-    // } else {
-    //   Navigator.pushReplacementNamed(context, "/CampusControl",
-    //       arguments: {"name": currUser.displayName});
-    // }
   }
 
   @override
@@ -29,12 +22,13 @@ class _SplashState extends State<Splash> {
     WidgetsBinding.instance.addPostFrameCallback((_)async {
       print("WidgetsBinding");
       // AuthServices().signIn();
-      User firebaseUser = await FirebaseAuth.instance.currentUser!;
-      if(firebaseUser == null){
-        func();
-      }else{
-        Navigator.pushReplacementNamed(context, "/Home");
-      }
+      Future.delayed(const Duration(seconds: 3),(){
+        if(FirebaseAuth.instance.currentUser != null){
+          Navigator.pushReplacementNamed(context, "/CampusControl");
+        }else{
+          Navigator.pushReplacementNamed(context, "/Home");
+        }
+      });
 
     });
   }

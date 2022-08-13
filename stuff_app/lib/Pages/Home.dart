@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+
 import 'package:stuff_app/AuthServices.dart';
 import 'package:stuff_app/Pages/Department.dart';
 
@@ -15,20 +15,17 @@ class _HomeState extends State<Home> {
   bool isSignedIn = true;
   String Letter = "";
   User? user = FirebaseAuth.instance.currentUser;
+
   // temp();
 
-  void temp(){
-
+  void temp() {
     User? user = FirebaseAuth.instance.currentUser;
-    if(user != null){
+    if (user != null) {
       String? k = user.displayName;
       Letter = k![0];
-
-
-    }else{
+    } else {
       isSignedIn = false;
     }
-
   }
 
   @override
@@ -38,14 +35,10 @@ class _HomeState extends State<Home> {
     temp();
   }
 
-
-
-
-
   void handleSignIn() async {
     await AuthServices().signIn();
     user = FirebaseAuth.instance.currentUser;
-    if(user != null){
+    if (user != null) {
       String? k = user?.displayName;
       Letter = k![0];
     }
@@ -60,7 +53,11 @@ class _HomeState extends State<Home> {
     switch (departmentName) {
       case "Campus Control":
         {
-          Navigator.pushReplacementNamed(context, "/CampusControl");
+          if (FirebaseAuth.instance.currentUser != null) {
+            Navigator.pushReplacementNamed(context, "/CampusControl");
+          } else {
+            // TODO Show toast msg
+          }
         }
         break;
       case "Bus Services":
@@ -95,7 +92,7 @@ class _HomeState extends State<Home> {
             Container(
               margin:
                   const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-              child: isSignedIn
+              child: FirebaseAuth.instance.currentUser == null
                   ? ElevatedButton(
                       onPressed: handleSignIn,
                       child: const Text(
@@ -103,8 +100,12 @@ class _HomeState extends State<Home> {
                         style: TextStyle(color: Colors.black),
                       ))
                   : CircleAvatar(
-                child: Text(Letter),
-              ),
+                      backgroundColor: const Color(0xff31AFB4),
+                      child: Text(
+                        FirebaseAuth.instance.currentUser!.displayName![0],
+                        style: const TextStyle(fontSize: 20.0,color: Colors.white),
+                      ),
+                    ),
             )
           ],
           backgroundColor: Colors.white,
@@ -175,7 +176,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             )
           ],
