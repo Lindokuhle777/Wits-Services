@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Firebase/auth_service.dart';
-import 'MapPage.dart';
+import 'MapStuff/MapPage.dart';
 
 class Protection extends StatefulWidget {
   const Protection({Key? key}) : super(key: key);

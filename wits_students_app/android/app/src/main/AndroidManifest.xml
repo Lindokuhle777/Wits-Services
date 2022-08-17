@@ -9,7 +9,7 @@
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="wits_students_app">
+        android:label="Students App">
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC9IASWYn-Va2629LjojJW9EO_VcmWXp_Q"/>
         <activity
