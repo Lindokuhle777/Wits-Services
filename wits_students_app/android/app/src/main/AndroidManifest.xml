@@ -11,7 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Students App">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC9IASWYn-Va2629LjojJW9EO_VcmWXp_Q"/>
+            android:value="AIzaSyDACNleoEcc_TYc2JWsYQ8RjpZyub4G8E8"/>
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

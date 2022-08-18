@@ -4,7 +4,7 @@ import 'dart:convert' as convert;
 import 'package:wits_students_app/Protection/Models/place_search.dart';
 import 'package:wits_students_app/Protection/Models/place.dart';
 class PlacesService {
-  final key = 'AIzaSyC9IASWYn-Va2629LjojJW9EO_VcmWXp_Q';
+  final key = 'AIzaSyDACNleoEcc_TYc2JWsYQ8RjpZyub4G8E8';
 
   Future<List<PlaceSearch>> getAutoComplete(String search) async {
     var url =
@@ -15,7 +15,7 @@ class PlacesService {
     var jsonResults = json['predictions'] as List;
     var results =
         jsonResults.map((place) => PlaceSearch.fromJson(place)).toList();
-    print('blahblahblahblahblahblahblahblahblahblah${results}');
+    // print('blahblahblahblahblahblahblahblahblahblah${results}');
     return results;
   }
 

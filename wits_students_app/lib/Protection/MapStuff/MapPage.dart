@@ -26,32 +26,31 @@ class _MapPageState extends State<MapPage> {
   final ScrollController listViewController = ScrollController();
   late StreamSubscription locationSubscription;
 
-  @override
-  void initState() {
-    final applicationBloc =
-        Provider.of<ApplicationBloc>(context, listen: false);
-
-    locationSubscription =
-        applicationBloc.selectedLocation.stream.listen((place) {
-      _goToPlace(place);
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    final applicationBloc =
-        Provider.of<ApplicationBloc>(context, listen: false);
-    applicationBloc.dispose();
-    locationSubscription.cancel();
-    super.dispose();
-  }
+  // @override
+  // void initState() {
+  //   final applicationBloc =
+  //       Provider.of<ApplicationBloc>(context, listen: false);
+  //
+  //   locationSubscription =
+  //       applicationBloc.selectedLocation.stream.listen((place) {
+  //     _goToPlace(place);
+  //   });
+  //   super.initState();
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   final applicationBloc =
+  //       Provider.of<ApplicationBloc>(context, listen: false);
+  //   applicationBloc.dispose();
+  //   locationSubscription.cancel();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
     final applicationBloc = Provider.of<ApplicationBloc>(context);
     return Scaffold(
-      // appBar: AppBar(),
       key: _key,
       drawer: const Drawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
@@ -90,14 +89,6 @@ class _MapPageState extends State<MapPage> {
                       position: LatLng(applicationBloc.currentLocation.latitude,
                           applicationBloc.currentLocation.longitude),
                     ),
-                    // const Marker(
-                    //   markerId: MarkerId('source'),
-                    //   position: sourceLocation,
-                    // ),
-                    // const Marker(
-                    //   markerId: MarkerId('destination'),
-                    //   position: destinationLocation,
-                    // ),
                   },
                   onMapCreated: (mapController) {
                     _mapController.complete(mapController);
@@ -141,7 +132,6 @@ class _MapPageState extends State<MapPage> {
                 ),
               ],
             ),
-      // bottomSheet: BottomSheet(builder: (BuildContext context) {  },),
     );
   }
 
