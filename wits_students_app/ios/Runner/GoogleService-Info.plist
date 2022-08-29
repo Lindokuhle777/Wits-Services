@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+<<<<<<<< HEAD:wits_students_app/ios/Runner/GoogleService-Info.plist
+	<string>147092371359-m21g7893ja5n4340ne7447bs5bs7gdgg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.147092371359-m21g7893ja5n4340ne7447bs5bs7gdgg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>147092371359-pkkcuckdmm25t2kvkmpc03tvcgjhfnba.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC1gm216VKwqEq3oApesCakwxisuWXtkdk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>147092371359</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.witsStudentsApp</string>
+	<key>PROJECT_ID</key>
+	<string>wits-services-ea5cf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wits-services-ea5cf.appspot.com</string>
+========
+	<string>817108221474-bkarv69lla2os2g2gc426heuiqjtdlbe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.817108221474-bkarv69lla2os2g2gc426heuiqjtdlbe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvvOVlLxyFzvGJ00YpkvBPpFjvBiNKp3k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>817108221474</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.stuffApp</string>
+	<key>PROJECT_ID</key>
+	<string>wits-services-33f98</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wits-services-33f98.appspot.com</string>
+>>>>>>>> 0f17a19f1d3d340fa884ff8fbaaee5126994881c:stuff_app/ios/Runner/GoogleService-Info.plist
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+<<<<<<<< HEAD:wits_students_app/ios/Runner/GoogleService-Info.plist
+	<string>1:147092371359:ios:965079659a06fc524dafaa</string>
+========
+	<string>1:817108221474:ios:fb0afc5edd67edb9a9547b</string>
+>>>>>>>> 0f17a19f1d3d340fa884ff8fbaaee5126994881c:stuff_app/ios/Runner/GoogleService-Info.plist
+</dict>
+</plist>
